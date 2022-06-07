@@ -18,7 +18,9 @@ namespace PartList
         public Form1()
         {
             InitializeComponent();
+
             SpreadsheetCreator.CreateTable();
+
             Process.Start(new ProcessStartInfo(@"C:\temp\testeExcel.xlsx"));
         }
     }
