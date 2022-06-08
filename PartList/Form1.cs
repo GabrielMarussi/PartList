@@ -9,19 +9,39 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
+using ClosedXML.Excel;
 
 namespace PartList
 {
     public partial class Form1 : Form
     {
-        
+        IXLWorkbook wb;
+        IXLWorksheet ws;
+
         public Form1()
         {
             InitializeComponent();
 
-            SpreadsheetCreator.CreateTable();
+            wb = new XLWorkbook();
+            ws = wb.Worksheets.Add("Plan1");
 
-            Process.Start(new ProcessStartInfo(@"C:\temp\testeExcel.xlsx"));
+            SpreadsheetCreator.CreateTable(wb,ws);
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            SpreadsheetCreator.AddLine(ws, wb, TxtNome.Text, TxtSerial.Text, TxtMarca.Text, TxtModelo.Text, TxtObs.Text, TxtProcessador.Text, TxtMemoria.Text, TxtHd.Text, TxtLacre.Text, TxtWindows.Text);
+
+            TxtNome.Text = "";
+            TxtSerial.Text = "";
+            TxtMarca.Text = "";
+            TxtModelo.Text = "";
+            TxtObs.Text = "";
+            TxtProcessador.Text = "";
+            TxtMemoria.Text = "";
+            TxtHd.Text = "";
+            TxtLacre.Text = "";
+            TxtWindows.Text = "";
         }
     }
 }
