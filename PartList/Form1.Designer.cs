@@ -51,18 +51,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.TxtObs = new System.Windows.Forms.RichTextBox();
             this.BtnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Processador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Memoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lacre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Windows = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSalvar = new System.Windows.Forms.Button();
             this.spreadsheetCreatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetCreatorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,7 +224,7 @@
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(693, 229);
+            this.BtnAdd.Location = new System.Drawing.Point(625, 229);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(75, 23);
             this.BtnAdd.TabIndex = 22;
@@ -242,69 +232,15 @@
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // dataGridView1
+            // BtnSalvar
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Serial,
-            this.Marca,
-            this.Modelo,
-            this.Processador,
-            this.Memoria,
-            this.HD,
-            this.Lacre,
-            this.Windows});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 297);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(755, 141);
-            this.dataGridView1.TabIndex = 23;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Serial
-            // 
-            this.Serial.HeaderText = "Serial";
-            this.Serial.Name = "Serial";
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            // 
-            // Modelo
-            // 
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.Name = "Modelo";
-            // 
-            // Processador
-            // 
-            this.Processador.HeaderText = "Processador";
-            this.Processador.Name = "Processador";
-            // 
-            // Memoria
-            // 
-            this.Memoria.HeaderText = "Memoria";
-            this.Memoria.Name = "Memoria";
-            // 
-            // HD
-            // 
-            this.HD.HeaderText = "HD";
-            this.HD.Name = "HD";
-            // 
-            // Lacre
-            // 
-            this.Lacre.HeaderText = "Lacre";
-            this.Lacre.Name = "Lacre";
-            // 
-            // Windows
-            // 
-            this.Windows.HeaderText = "Windows";
-            this.Windows.Name = "Windows";
+            this.BtnSalvar.Location = new System.Drawing.Point(713, 230);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.BtnSalvar.TabIndex = 24;
+            this.BtnSalvar.Text = "Salvar";
+            this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // spreadsheetCreatorBindingSource
             // 
@@ -314,8 +250,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(800, 267);
+            this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.TxtObs);
             this.Controls.Add(this.label10);
@@ -339,7 +275,6 @@
             this.Controls.Add(this.TxtNome);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetCreatorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -370,17 +305,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RichTextBox TxtObs;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Serial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Processador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Memoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lacre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Windows;
         private System.Windows.Forms.BindingSource spreadsheetCreatorBindingSource;
+        private System.Windows.Forms.Button BtnSalvar;
     }
 }
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 
@@ -44,10 +39,6 @@ namespace PartList
             ws.Column("I").Width = 15;
             ws.Column("J").Width = 15;
 
-            
-
-            Select(ws, "A1", "J1").Style.Fill.BackgroundColor = XLColor.ArmyGreen;
-            Select(ws, "A1", "J1").Style.Font.FontColor = XLColor.White;
             wb.SaveAs(@"C:\temp\testeExcel.xlsx");
         }
 
@@ -63,12 +54,22 @@ namespace PartList
             ws.Cell(LinhaAtual, 8).Value = CleanTxt(Hd);
             ws.Cell(LinhaAtual, 9).Value = CleanTxt(Lacre); ;
             ws.Cell(LinhaAtual, 10).Value = CleanTxt(Windows);
+           
+            LinhaAtual+=1;
+        }
+        static public void Save(IXLWorksheet ws, IXLWorkbook wb)
+        {
+            IXLAddress firstCell = ws.FirstCellUsed().Address;
+            IXLAddress lastCell = ws.LastCellUsed().Address;
+            IXLRange Range = ws.Range(firstCell, lastCell);
 
-            // temporario
+            Range.Clear(XLClearOptions.AllFormats);
+
+            Range.CreateTable();
+            
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                wb.SaveAs(@"C:\temp\testeExcel.xlsx");
-                LinhaAtual += 1;
+                wb.SaveAs(sfd.FileName + ".xlsx");
             }
             else
             {

@@ -15,8 +15,8 @@ namespace PartList
 {
     public partial class Form1 : Form
     {
-        IXLWorkbook wb;
-        IXLWorksheet ws;
+        private IXLWorkbook wb;
+        private IXLWorksheet ws;
 
         public Form1()
         {
@@ -43,5 +43,7 @@ namespace PartList
             TxtLacre.Text = "";
             TxtWindows.Text = "";
         }
+
+        private void BtnSalvar_Click(object sender, EventArgs e) => SpreadsheetCreator.Save(ws, wb);
     }
 }
